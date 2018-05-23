@@ -1,0 +1,23 @@
+server.port: 8081
+prepaidproxy:
+#  rs2Url: http://bwsp-testweb.bw-sp.com:8080/wsm
+  authorization: Basic Ym9qLWNsaWVudDpCb2pwYXNzITc=
+  grantType: client_credentials
+  enableTest: false
+  PRPCheckAAACardAuthClient: com.main.PRPCheckAAACardAuthClient
+  esbServerIP:
+  esbServerPort:
+  esbProtocol: https
+
+  cardStatusUri: /api/cards/status
+  oauth2TokenUri: /oauth2/token
+  TransferInternalUri: /api/transfer/internal
+  BalanceDetailsUri: /api/balance-details
+  AccountsHistoryUri: /api/accounts/history
+  getTokenRetryTimes: 3
+logging:
+  level:
+    org.apache.http: DEBUG
+    il.co.prepaidproxy: DEBUG
+    il.co.prepaidproxy.service.impl: DEBUG
+  file:  /opt/prepaid-proxy-rest.log
